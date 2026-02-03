@@ -1,135 +1,66 @@
-# Turborepo starter
+# Hệ thống quản lý quỹ CLB
 
-This Turborepo starter is maintained by the Turborepo core team.
+- Document: [Hệ thống quản lý quỹ CLB](https://www.notion.so/H-th-ng-qu-n-l-qu-CLB-2f3e38cf7abc80cb8e56dabde2df7fbb?source=copy_link)
 
-## Using this example
+**Ghi nhận quỹ tháng**
 
-Run the following command:
+- Tự động ghi nhận giao dịch theo cú pháp: `MSSV_QT{Tháng}` (ví dụ: `SE200947_QT1`)
+- Tự động xác định người nộp, tháng nộp và loại quỹ
+- Áp dụng cho tất cả các tháng
 
-```sh
-npx create-turbo@latest
-```
+---
 
-## What's inside?
+**Ghi nhận quỹ sự kiện**
 
-This Turborepo includes the following packages/apps:
+- Tự động ghi nhận giao dịch theo cú pháp: `MSSV_{TenSuKien}` (ví dụ: `SE200947_TatNien`)
+- Quỹ sự kiện tách biệt với quỹ tháng
+- Tên sự kiện do quản trị viên tạo và cấu hình
+- Cho phép đóng tiền nhiều đợt cho cùng một sự kiện
+- Tự động cộng dồn số tiền đã đóng
+- Tự động gửi email xác nhận mỗi lần nhận tiền (đã nhận, còn thiếu hoặc đã đủ)
 
-### Apps and Packages
+---
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+**Quản lý chi tiêu**
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+- Đồng bộ giao dịch chuyển tiền ra bên ngoài lên hệ thống
 
-### Utilities
+---
 
-This Turborepo has some additional tools already setup for you:
+**Tổng hợp và báo cáo quỹ**
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- Tổng số dư quỹ thực tế
+- Tổng thu trong tháng
+- Tổng chi trong tháng
+- Chênh lệch quỹ so với tháng trước
+- Tổng hợp theo từng sự kiện: thu, chi, số dư
 
-### Build
+---
 
-To build all apps and packages, run the following command:
+**Quản lý vi phạm nội bộ**
 
-```
-cd my-turborepo
+- HR import danh sách vi phạm (ví dụ: không mặc áo CLB)
+- Hệ thống tự động tạo mã QR cho từng trường hợp vi phạm
+- Gửi email thông báo kèm mã QR đến cá nhân vi phạm
 
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
+---
 
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
-```
+**Xuất dữ liệu**
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+- Xuất báo cáo ra file Excel
+- Xuất dữ liệu sang Google Sheets
+- Lọc theo tháng, sự kiện hoặc cá nhân
 
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+---
 
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+**Nhắc đóng quỹ tự động**
 
-### Develop
+- Tự động gửi email nhắc đóng quỹ vào ngày 5 và ngày 15 hằng tháng
+- Gửi cho các thành viên chưa đóng hoặc đóng chưa đủ
 
-To develop all apps and packages, run the following command:
+---
 
-```
-cd my-turborepo
+**Phân chia theo ROLE**
 
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
-```
-
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
-
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
-
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+- ADMIN
+- USER
