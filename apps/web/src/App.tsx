@@ -1,7 +1,12 @@
 import './assets/styles/index.css';
-import HomePage from './pages/home/home.page';
+import { AppProvider } from './providers/AppProvider';
+import AppRouter from './routes';
 const App = () => {
-  return <HomePage />;
+  return (
+    <AppProvider>
+      <AppRouter />
+    </AppProvider>
+  );
 };
 
 export default App;
