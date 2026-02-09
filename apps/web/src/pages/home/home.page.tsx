@@ -1,7 +1,13 @@
-const HomePage = () => {
-  console.log(import.meta.env?.BUN_PUBLIC_API_URL);
+import Histories from './Histories';
+import Stats from './Stats';
 
-  return <b>Demo Hệ thống</b>;
+const HomePage = () => {
+  return (
+    <>
+      <Stats />
+      <Histories />
+    </>
+  );
 };
 
 export default HomePage;
