@@ -150,7 +150,7 @@ class Helper {
 
     return { text: 'Sắp bắt đầu', color: '#EF4444', status: 'urgent' };
   }
-  
+
   static belowAverage = (score: number | null) => {
     if (score === null) return false;
     return score < 50;
