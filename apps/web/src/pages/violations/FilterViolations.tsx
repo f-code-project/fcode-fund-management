@@ -6,21 +6,21 @@ const FilterViolations = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Từ ngày</span>
+            <span className="label-text text-xs mb-2">Từ ngày</span>
           </label>
           <input type="date" className="input input-bordered w-full" />
         </div>
 
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Đến ngày</span>
+            <span className="label-text text-xs mb-2">Đến ngày</span>
           </label>
           <input type="date" className="input input-bordered w-full" />
         </div>
 
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Loại vi phạm</span>
+            <span className="label-text text-xs mb-2">Loại vi phạm</span>
           </label>
           <select className="select select-bordered w-full">
             <option value="">Tất cả</option>
@@ -32,21 +32,21 @@ const FilterViolations = () => {
 
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Mã sinh viên</span>
+            <span className="label-text text-xs mb-2">Mã sinh viên</span>
           </label>
           <input type="text" className="input input-bordered w-full" placeholder="VD: SE200947" />
         </div>
 
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Tên thành viên</span>
+            <span className="label-text text-xs mb-2">Tên thành viên</span>
           </label>
           <input type="text" className="input input-bordered w-full" placeholder="Nhập tên" />
         </div>
 
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Trạng thái</span>
+            <span className="label-text text-xs mb-2">Trạng thái</span>
           </label>
           <select className="select select-bordered w-full">
             <option value="">Tất cả</option>
