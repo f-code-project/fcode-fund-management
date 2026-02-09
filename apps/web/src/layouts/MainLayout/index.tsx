@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router';
 import { Toaster } from 'sonner';
+import { Header } from '../../components/Header';
 import Footer from './Footer';
-import Header from './Header';
 
 const MainLayout = () => {
   return (
