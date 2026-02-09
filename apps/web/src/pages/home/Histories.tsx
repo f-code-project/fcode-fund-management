@@ -72,7 +72,7 @@ const Histories = () => {
   return (
     <div className="bg-base-100 shadow-xs rounded-lg">
       <div className="p-4 border-b flex justify-between items-center">
-        <h3 className="text-base font-semibold">Lịch sử nhận tiền gần đây</h3>
+        <h3 className="text-base font-semibold"> 100 giao dịch nhận tiền gần nhất</h3>
         <Link to={'/history-transactions'} className="text-xs flex items-center gap-1">
           Xem tất cả <ArrowRight size={15} />
         </Link>
