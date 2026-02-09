@@ -29,6 +29,7 @@ const AddEventModal = () => {
           <h3 className="font-bold text-lg mb-4">Tạo sự kiện mới</h3>
 
           <form className="space-y-4">
+            {/* Thông tin cơ bản */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="form-control">
                 <label className="label">
@@ -47,6 +48,7 @@ const AddEventModal = () => {
               </div>
             </div>
 
+            {/* Mô tả */}
             <div className="form-control">
               <label className="label">
                 <span className="label-text text-xs mb-2">Mô tả sự kiện</span>
@@ -57,6 +59,7 @@ const AddEventModal = () => {
               ></textarea>
             </div>
 
+            {/* Thể loại và số tiền */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="form-control">
                 <label className="label">
@@ -80,6 +83,7 @@ const AddEventModal = () => {
               </div>
             </div>
 
+            {/* Thời gian */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="form-control">
                 <label className="label">
@@ -98,6 +102,7 @@ const AddEventModal = () => {
               </div>
             </div>
 
+            {/* Trạng thái và thông báo */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="form-control">
                 <label className="label">
@@ -120,6 +125,7 @@ const AddEventModal = () => {
               </div>
             </div>
 
+            {/* Ghi chú thêm */}
             <div className="form-control">
               <label className="label">
                 <span className="label-text text-xs mb-2">Ghi chú</span>
@@ -132,6 +138,7 @@ const AddEventModal = () => {
 
             <div className="divider"></div>
 
+            {/* Actions */}
             <div className="modal-action">
               <button type="button" className="btn btn-ghost" onClick={closeModal}>
                 Hủy
