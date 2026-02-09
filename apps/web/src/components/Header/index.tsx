@@ -1,4 +1,7 @@
+import { House } from 'lucide-react';
 import { Link } from 'react-router';
+import ActiveHeader from '../../utils/active-header';
+import { NavLink } from './NavLink';
 
 export const Header = () => {
   return (
@@ -18,9 +21,9 @@ export const Header = () => {
 
         <nav className="ml-12 hidden lg:block">
           <ul className="flex items-center gap-2">
-            {/* <li>
-                            <NavLink url="/" name="Trang chủ" Icon={House} active={Helper.isActive(location.pathname, '/')} />
-                        </li> */}
+            <li>
+              <NavLink url="/" name="Trang chủ" Icon={House} active={ActiveHeader.isActive(location.pathname, '/')} />
+            </li>
 
             {/* {isLogin && (
                             <>
